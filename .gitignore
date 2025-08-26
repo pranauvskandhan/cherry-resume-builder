@@ -1,0 +1,61 @@
+
+# OS
+
+.DS_Store
+Thumbs.db
+
+
+# Node / JavaScript (not used here)
+
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# build / dist
+dist/
+build/
+.cache/
+.parcel-cache/
+.next/
+out/
+coverage/
+
+
+# Python (not used here)
+
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+ENV/
+env/
+*.egg
+*.whl
+
+
+# IDE / Editor configs
+
+.vscode/
+.idea/
+*.swp
+*.swo
+
+
+# Logs
+
+*.log
+logs/
+debug.log
+
+
+
+*.bak
+*.tmp
+*.temp
+*.old
+
+
+_site/

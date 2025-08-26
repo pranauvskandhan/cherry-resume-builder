@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8"/>
+    <title>Resume Builder</title>
+
+    <!-- <link rel="stylesheet" href="resume.css" /> -->
+</head>
+
+<body>
+    <header class="app-header">
+        <h1>Resume Builder</h1>
+        <div class="header-actions"> 
+            <button id="downloadPdfBtn">Generate PDF</button>
+            <button id="clearBtn" class="ghost">Clear</button>
+        </div>
+    </header>
+
+<main class="grid">
+
+    <section class="panel form-panel">
+        <form id="resumeForm" autocomplete="on">
+
+            <!--Name-->
+            <div class="field-row">
+                <label>Full Name</label>
+                <input type="text" data-bind="name" placeholder="Your Name" />
+            </div>
+
+            <!--Role-->
+            <div class="field-row">
+                <label>Role</label>
+                <input type="text" data-bind="role" placeholder="Enter your current role/headline" />
+            </div>
+            
+            <!--Contact-Email & Phone-->
+            <div class="two">
+                <div class="field-row">
+                    <label>Email</label>
+                    <input type="email" data-bind="email" placeholder="xxx@gmail.com" />
+                </div>
+
+                <div class="field-row">
+                    <label>Phone</label>
+                    <input type="text" data-bind="phone" placeholder="+91-XXXXXXXXXX" />
+                </div>
+            </div>
+
+            <!--Location & Website-->
+            <div class="two">
+                <div class="field-row">
+                    <label>Location</label>
+                    <input type="text" data-bind="location" placeholder="Enter your location" />
+                </div>
+
+                <div class="field-row">
+                    <label>Website</label>
+                    <input type="text" data-bind="website" placeholder="Enter your website" />
+                </div>
+            </div>
+
+            <!--Summary-->
+            <div class="field-row">
+                <label>Summary</label>
+                <textarea data-bind="summary" rows="3" placeholder="Brief value statements that highlight your skills"></textarea>
+            </div>
+
+            <!--Education-->
+            <div class="field-row">
+                <label>Education (One per line)</label>
+                <textarea data-bind="education" rows="4" placeholder="Enter your education details"></textarea>
+            </div>
+
+            <!--Experience-->
+            <div class="field-row">
+                <label>Experience (One per line)</label>
+                <textarea data-bind="experience" rows="4" placeholder="Enter your Experience"></textarea>
+            </div>
+
+            <!--Projects or any relevant works-->
+            <div class="field-row">
+                <label>Projects</label>
+                <textarea data-bind="projects" rows="4" placeholder="Projects"></textarea>
+            </div>
+
+            <!--Skills-->
+            <div class="field-row">
+                <label>Skills</label>
+                <textarea data-bind="skills" rows="3" placeholder="Enter your skills"></textarea>
+            </div>
+        </form>
+    </section>
+
+<!--Preview-->
+
+<section class="panel preview-panel">
+    <h2>Preview</h2>
+    <div id="resume" class="resume template">
+        <header class="r-head">
+            <h1 id="r-name">Your Name</h1>
+            <p id="r-headline">Role</p>
+            <p class="r-meta">
+                <span id="r-email">you@gmail.com</span> •
+                <span id="r-phone">+91-XXXXXXXXXX</span> •
+                <span id="r-location">City, Country</span> •
+                <span id="r-website">yourwebsite.com</span>
+            </p>
+        </header>
+
+        <!--Summary-->
+        <section class="r-section">
+            <h2>Summary</h2>
+            <p id="r-summary">(Your summary)</p>
+        </section>
+
+        <!--Education-->
+        <section class="r-education">
+            <h2>Education</h2>
+            <ul id="r-education" class="list"></ul>
+        </section>
+
+        <!--Experience-->
+        <section class="r-experience">
+            <h2>Experience</h2>
+            <ul id="r-experience" class="list"></ul>
+        </section>
+
+        <!--Projects-->
+        <section class="r-projects">
+            <h2>Projects</h2>
+            <ul id="r-projects" class="list"></ul>
+        </section>
+
+        <!--Skills-->
+        <section class="r-skills">
+            <h2>Skills</h2>
+            <ul id="r-skills" class="list"></ul>
+        </section>
+    </div>
+</section>
+</main>
+</body>
+</html>
