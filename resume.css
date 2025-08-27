@@ -1,0 +1,117 @@
+:root{
+    /* Sandal palette */
+    --bg:#fdfaf6;          
+    --panel:#ffffff;       
+    --ink:#2d2a26;         
+    --muted:#7c6f64;      
+    --accent:#c89f65;      
+    --line:#e6dfd6;        
+  }
+  
+  *{box-sizing:border-box}
+  html,body{height:100%}
+  body{
+    margin:0;
+    font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif;
+    background:linear-gradient(180deg,#fdfaf6 0%, #f8f5f1 100%);
+    color:var(--ink);
+  }
+  
+  /* header */
+  .app-header{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:16px 20px; border-bottom:1px solid var(--line);
+    position:sticky; top:0;
+    background:#fff8f0cc; backdrop-filter:saturate(140%) blur(6px);
+  }
+  .app-header h1{font-size:18px; margin:0; color:var(--ink)}
+  .header-actions{display:flex; gap:10px}
+  button, select{
+    background:var(--accent); color:#fff; border:0; border-radius:10px; padding:10px 12px;
+    font-weight:600; cursor:pointer; transition:filter .15s ease, transform .02s ease;
+  }
+  button:hover, select:hover{filter:brightness(0.95)}
+  button:active{transform:translateY(1px)}
+  select{background:#fdf6ed; color:var(--ink); border:1px solid var(--line)}
+  button.ghost{background:#fdf6ed; color:var(--ink); border:1px solid var(--line)}
+  
+  /* layout */
+  .grid{
+    display:grid; grid-template-columns: 420px 1fr; gap:16px;
+    padding:16px; max-width:1400px; margin:0 auto;
+    background:var(--bg);
+  }
+  .panel{
+    background:var(--panel); border:1px solid var(--line);
+    border-radius:16px; padding:16px; min-height:70vh;
+    box-shadow:0 8px 24px rgba(100,80,50,0.08);
+  }
+  
+  /* form */
+  .form-panel{overflow:auto}
+  .field-row{display:flex; flex-direction:column; gap:8px; margin-bottom:14px}
+  .field-row label{font-size:12px; color:var(--muted); letter-spacing:.02em}
+  .field-row input, .field-row textarea{
+    width:100%; background:#fffdf8; color:var(--ink); border:1px solid #e8dfd2;
+    border-radius:10px; padding:10px 12px; outline:none;
+    transition:border-color .15s ease, box-shadow .15s ease;
+  }
+  .field-row input:focus, .field-row textarea:focus{
+    border-color:#e0c29c; box-shadow:0 0 0 3px rgba(200,159,101,0.25);
+  }
+  .two{display:grid; grid-template-columns:1fr 1fr; gap:12px}
+  .hint{color:var(--muted); font-size:12px}
+  
+  /* preview resume */
+  .preview-panel{overflow:auto}
+  .resume{
+    background:#fff; color:#2d2a26; width:794px;
+    margin:0 auto; border-radius:12px; padding:36px 40px;
+    box-shadow:0 10px 30px rgba(0,0,0,.06);
+    border:1px solid #f0e6da;
+  }
+  .r-head h1{margin:0; font-size:32px; letter-spacing:.3px; color:#2d2a26}
+  .r-head .r-meta{color:#7c6f64; margin-top:6px}
+  .r-head #r-headline{margin:6px 0 0 0; color:#4a3f35; font-weight:600}
+  .r-section{margin-top:22px}
+  .r-section h2{
+    font-size:14px; letter-spacing:.12em; text-transform:uppercase;
+    color:#5c5146; margin:0 0 8px;
+    border-bottom:2px solid #eee3d4; padding-bottom:6px;
+  }
+  .list{margin:0; padding-left:18px}
+  .list li{margin:6px 0}
+  .skills{display:flex; flex-wrap:wrap; gap:8px; list-style:none; padding:0}
+  .skills li{
+    background:#f6f1ea; border:1px solid #e6dfd6; border-radius:999px; padding:6px 10px; font-size:12px;
+  }
+  
+  /* template variations */
+  .template--classic .r-head h1{font-weight:800}
+  .template--classic .r-section h2{border-color:#e6dfd6}
+  
+  .template--modern{
+    border:2px solid #e6dfd6;
+    background:linear-gradient(180deg,#fffdf9 0%, #fbf9f6 100%);
+  }
+  .template--modern .r-head h1{color:#2d2a26}
+  .template--modern .r-section h2{
+    border:none; background:#f2e7d9;
+    display:inline-block; padding:4px 8px; border-radius:6px;
+  }
+  
+  /* footer */
+  .app-footer{padding:16px; text-align:center; color:var(--muted); background:var(--bg)}
+  
+  /* responsive */
+  @media (max-width: 1060px){
+    .grid{grid-template-columns:1fr}
+    .resume{width:100%}
+  }
+  
+  /* print / pdf */
+  @media print{
+    body{background:#fff}
+    .app-header, .app-footer, .form-panel{display:none}
+    .preview-panel, .resume{border:none; box-shadow:none; margin:0; padding:24px}
+  }
